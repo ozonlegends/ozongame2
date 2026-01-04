@@ -16,7 +16,7 @@ from telegram.ext import (
 from flask import Flask
 
 # ===== НАСТРОЙКИ ИЗ ENV =====
-BOT_TOKEN = os.getenv("8057481014:AAEQaMK9PHKbLZslAYYqPiE_X93KbLy6S44")
+BOT_TOKEN = os.getenv("8057481014:AAFJeS5SrRgZNNAmHFGuYRDOpUD8EpkbjWU")
 WEBAPP_URL = os.getenv("https://darling-gecko-ca89da.netlify.app/")
 
 # ===== ЛОГИ =====
@@ -75,3 +75,4 @@ def run_web():
 if __name__ == "__main__":
     threading.Thread(target=run_bot).start()
     run_web()
+
