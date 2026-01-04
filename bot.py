@@ -19,6 +19,9 @@ from flask import Flask
 BOT_TOKEN = os.getenv("8057481014:AAFJeS5SrRgZNNAmHFGuYRDOpUD8EpkbjWU")
 WEBAPP_URL = os.getenv("https://darling-gecko-ca89da.netlify.app/")
 
+print("DEBUG: BOT_TOKEN =", BOT_TOKEN)
+print("DEBUG: BOT_TOKEN length =", len(BOT_TOKEN) if BOT_TOKEN else "None")
+
 # ===== ЛОГИ =====
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
@@ -75,4 +78,5 @@ def run_web():
 if __name__ == "__main__":
     threading.Thread(target=run_bot).start()
     run_web()
+
 
