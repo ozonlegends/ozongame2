@@ -16,11 +16,8 @@ from telegram.ext import (
 from flask import Flask
 
 # ===== НАСТРОЙКИ ИЗ ENV =====
-BOT_TOKEN = os.getenv("8057481014:AAFJeS5SrRgZNNAmHFGuYRDOpUD8EpkbjWU")
-WEBAPP_URL = os.getenv("https://darling-gecko-ca89da.netlify.app/")
-
-print("DEBUG: BOT_TOKEN =", BOT_TOKEN)
-print("DEBUG: BOT_TOKEN length =", len(BOT_TOKEN) if BOT_TOKEN else "None")
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+WEBAPP_URL = os.getenv("WEBAPP_URL")
 
 # ===== ЛОГИ =====
 logging.basicConfig(
@@ -78,5 +75,6 @@ def run_web():
 if __name__ == "__main__":
     threading.Thread(target=run_bot).start()
     run_web()
+
 
 
