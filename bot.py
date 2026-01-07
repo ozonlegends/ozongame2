@@ -35,23 +35,11 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "Нажми кнопку ниже, чтобы открыть игру."
     )
 
-    keyboard = [
-        [
-            KeyboardButton(
-                text="🚀 Открыть OZON LEGENDS",
-                web_app=WebAppInfo(url=WEBAPP_URL),
-            )
-        ]
-    ]
-
-    reply_markup = ReplyKeyboardMarkup(
-        keyboard,
-        resize_keyboard=True,
-    )
-
+    
     await update.message.reply_text(
         text,
-        reply_markup=reply_markup,
+        reply_markup=ReplyKeyboardRemove(),
+        parse_mode="Markdown",
     )
 
 def run_bot():
@@ -78,4 +66,5 @@ if __name__ == "__main__":
 
     # Telegram-бот в главном потоке (нужен event loop)
     run_bot()
+
 
